@@ -26,16 +26,16 @@
 						"newuser",
 						"titlebar=no,location=no,scrollbars=no,resizeable=no,menubar=no,toolbar=no,width=500,height=240");
 	}
-	function newfriend() { // 추가한 내용: 친구 추가 창 추가 , 검색으로 친구 찾아서 user id가 존재하면 친구 추가해주기  
+	function newfriend() { 
 		window
 				.open(
 						"newfriend.jsp",
 						"newfreind",
 						"titlebar=no,location=no,scrollbars=no,resizeable=no,menubar=no,toolbar=no,width=500,height=240");
 	}
-	function management() { // 추가한 내용: 관리자가 유저들의 정보를 볼 수 있는 창 추가  
+	function management() { 
 		pwd = prompt('관리자 비밀번호를 입력해주세요 ');
-		if(pwd=='1234'){ // 관리자 비밀번호가 1234 라고 가정하고 관리자만 접근할 수 있도록 한다.  
+		if(pwd=='1234'){  
 			window
 			.open(
 					"management.jsp",
@@ -44,7 +44,7 @@
 		}
 
 			}		
-	function del_user() { // 추가한 내용: 회원 탈퇴
+	function del_user() { 
 			window
 			.open(
 					"del_user.jsp",
