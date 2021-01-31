@@ -13,9 +13,9 @@ import="mysns.sns.*,mysns.member.*,java.util.*" %>
 
 	if(action.equals("new")) {
 		if(mdao.addMember(member))
-			out.println("<script>alert('정상적으로 등록 되었습니다. 로그인 하세요!!');opener.window.location.reload();window.close();</script>");
+			out.println("<script>alert('정상적으로 등록 되었습니다! 로그인 하세요');opener.window.location.reload();window.close();</script>");
 		else
-			out.println("<script>alert('같은 아이디가 존재 합니다!!');history.go(-1);</script>");
+			out.println("<script>alert('같은 아이디가 존재 합니다!');history.go(-1);</script>");
 	}
 
 	else if(action.equals("login")) {
