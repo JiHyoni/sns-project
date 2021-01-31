@@ -7,7 +7,7 @@ public class Member {
 	private String uid;
 	private String passwd;
 	private String email;
-	private String year; // 추가) 생년월일 
+	private String year; 
 	private Date date;
 	
 	public String getName() {
