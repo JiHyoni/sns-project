@@ -19,7 +19,7 @@ public class MemberDAO {
 	ResultSet rs;
 	Logger logger = LoggerFactory.getLogger(MemberDAO.class);
 	
-	public boolean addMember(Member member) { //추가) 생년월일
+	public boolean addMember(Member member) { 
 		conn = DBManager.getConnection();
 		String sql = "insert into s_member(name, uid, passwd, email, year,date) values(?,?,?,?,?,now())";
 		try {
@@ -97,7 +97,7 @@ public class MemberDAO {
 		}
 		return nmembers;
 	}
-	public boolean searchMember(String uid) { // 추가한 내용) 친구 추가 기능: 존재하는 아이디인지 검색해본다. 
+	public boolean searchMember(String uid) { // 존재하는 아이디인지 검색
 		conn = DBManager.getConnection();
 		String sql = "select uid from s_member where uid=?"; //s_member 테이블에서 uid 만 가져와서 검색 
 		boolean result1 = false;
@@ -123,7 +123,7 @@ public class MemberDAO {
 		return result1;
 	}
 
-	public boolean addFriend(String uid) { //추가한 내용) 친구 추가 기능: 추가할 친구들을 테이블에 넣는다. 
+	public boolean addFriend(String uid) { 
 		conn = DBManager.getConnection();
 		String sql = "insert into s_friend(uid) values(?)"; 
 		try {
@@ -146,7 +146,7 @@ public class MemberDAO {
 		return true;
 	}
 	
-	public ArrayList<String> getNewFriends() { // 추가한 내용 ) 친구 추가 기능: 친구 목록 불러오기 
+	public ArrayList<String> getNewFriends() { // 구 목록 불러오기 
 		ArrayList<String> nfriends = new ArrayList<String>();
 		conn = DBManager.getConnection();
 		
@@ -172,7 +172,7 @@ public class MemberDAO {
 		return nfriends;
 	}
 
-	public ArrayList<Member> getManage() { // 추가한 내용 ) 관리자 창에 회원 목록 불러오기 
+	public ArrayList<Member> getManage() { // 관리자 창에 회원 목록 불러오기 
 		ArrayList<Member> manage = new ArrayList<Member>();
 		conn = DBManager.getConnection();
 		String sql = "select uid, name, email, year from s_member";
@@ -201,7 +201,7 @@ public class MemberDAO {
 		}
 		return manage;
 	}
-	public boolean delMember(String uid) { // 추가한 내용 ) 회원 탈퇴 기능 
+	public boolean delMember(String uid) { // 회원 탈퇴 기능 
 		conn = DBManager.getConnection();
 		String sql = "delete from s_member where uid=?";
 		try {
