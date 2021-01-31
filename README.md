@@ -1,2 +1,6 @@
 # SNS_Project
-sos project 
+- `JSP`기말 프로젝트
+- 추가 기능 ) 친구 추가, 관리자 이용 기능, 회원 탈퇴
+
+
+
